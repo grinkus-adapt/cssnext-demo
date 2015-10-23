@@ -1,0 +1,15 @@
+{
+  "name": "cssnext-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build-css.js",
+    "start": "npm run build",
+    "watch": "watch 'node build-css.js' ./src --ignoreDotFiles"
+  },
+  "dependencies": {
+    "cssnext": "1.8.4",
+    "npmlog": "1.2.1",
+    "postcss": "5.0.10",
+    "watch": "0.16.0"
+  }
+}
