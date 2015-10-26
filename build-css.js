@@ -1,6 +1,11 @@
 'use strict';
 
 var fs = require('fs');
+var argv = require('minimist')(process.argv.slice(2), {
+  alias: {
+    'w': 'watch'
+  }
+});
 var log = require('npmlog');
 var postcss = require('postcss');
 var cssnext = require('cssnext');
@@ -26,14 +31,16 @@ function generateCss(inFile, outFile) {
 
 generateCss('src/style.css', 'style.css');
 
-watch.watchTree(
-  'src',
-  {
-    'ignoreDotFiles': true
-  },
-  function handleChanges(f) {
-    if (typeof f === 'string') {
-      generateCss(f, f.replace('src/', ''));
+if (argv.w) {
+  watch.watchTree(
+    'src',
+    {
+      'ignoreDotFiles': true
+    },
+    function handleChanges(f) {
+      if (typeof f === 'string') {
+        generateCss(f, f.replace('src/', ''));
+      }
     }
-  }
-);
+  );
+}

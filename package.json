@@ -4,10 +4,11 @@
   "scripts": {
     "build": "node build-css.js",
     "start": "npm run build",
-    "watch": "watch 'node build-css.js' ./src --ignoreDotFiles"
+    "watch": "npm run build -- --watch"
   },
   "dependencies": {
     "cssnext": "1.8.4",
+    "minimist": "1.2.0",
     "npmlog": "1.2.1",
     "postcss": "5.0.10",
     "watch": "0.16.0"
