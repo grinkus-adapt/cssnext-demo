@@ -1,0 +1,7 @@
+/* filters */
+.blur {
+  filter: blur(4px);
+}
+.sepia {
+  filter: sepia(.8);
+}

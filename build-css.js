@@ -8,7 +8,8 @@ var argv = require('minimist')(process.argv.slice(2), {
 });
 var log = require('npmlog');
 var postcss = require('postcss');
-var cssnext = require('cssnext');
+var cssnext = require('postcss-cssnext');
+var atImport = require('postcss-import');
 var watch = require('watch');
 
 function generateCss(inFile, outFile) {
@@ -17,7 +18,8 @@ function generateCss(inFile, outFile) {
   var endTime;
 
   postcss()
-    .use(cssnext())
+    .use(atImport())
+    .use(cssnext)
     .process(css, { from: inFile, to: outFile })
     .then(function handleResult(result) {
       fs.writeFileSync(outFile, result.css);

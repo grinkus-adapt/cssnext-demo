@@ -7,10 +7,11 @@
     "watch": "npm run build -- --watch"
   },
   "dependencies": {
-    "cssnext": "1.8.4",
     "minimist": "1.2.0",
     "npmlog": "1.2.1",
     "postcss": "5.0.10",
+    "postcss-cssnext": "2.2.0",
+    "postcss-import": "7.1.0",
     "watch": "0.16.0"
   }
 }

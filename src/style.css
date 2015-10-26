@@ -46,10 +46,4 @@ table {
   font-variant-numeric: lining-nums;
 }
 
-/* filters */
-.blur {
-  filter: blur(4px);
-}
-.sepia {
-  filter: sepia(.8);
-}
+@import "filters.css";
