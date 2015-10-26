@@ -1,0 +1,5 @@
+@custom-media --viewport-medium (width <= 50rem);
+
+@media (--viewport-medium) {
+  body { font-size: calc(var(--fontSize) * 1.2); }
+}

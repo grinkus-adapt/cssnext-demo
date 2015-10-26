@@ -1,49 +1,7 @@
-/* custom properties */
-:root {
-  --fontSize: 1rem;
-  --primaryColor: rebeccapurple;
-  --highlightColor: hwb(190, 35%, 20%);
-  --offwhite: rgba(245, 245, 245, 255);
-}
-
-/* some var() & calc() */
-body {
-  background: var(--offwhite);
-  color: var(--primaryColor);
-  font-size: var(--fontSize);
-  line-height: calc(var(--fontSize) * 1.5);
-  padding: calc((var(--fontSize) / 2) + 1px);
-  text-align: center;
-}
-
-/* custom media queries */
-@custom-media --viewport-medium (width <= 50rem);
-
-/* custom media query usage */
-@media (--viewport-medium) {
-  body { font-size: calc(var(--fontSize) * 1.2); }
-}
-
-/* custom selectors */
-@custom-selector :--heading h1, h2, h3, h4, h5, h6;
-:--heading { margin-top: 0 }
-
-/* colors stuff */
-a {
-  color: var(--highlightColor);
-  transition: color 1s; /* autoprefixed ! */
-}
-a:hover { color: gray(255, 50%) }
-a:active { color: rebeccapurple }
-a:any-link { color: color(var(--highlightColor) blackness(+20%)) }
-
-/* font stuff */
-h2 {
-  font-variant-caps: small-caps;
-}
-
-table {
-  font-variant-numeric: lining-nums;
-}
-
-@import "filters.css";
+@import 'variables.css';
+@import 'base.css';
+@import 'custom-selectors.css';
+@import 'media-queries.css';
+@import 'color-stuff.css';
+@import 'font-stuff.css';
+@import 'filters.css';

@@ -1,0 +1,7 @@
+a {
+  color: var(--highlightColor);
+  transition: color 1s; /* autoprefixed ! */
+}
+a:hover { color: gray(255, 50%) }
+a:active { color: rebeccapurple }
+a:any-link { color: color(var(--highlightColor) blackness(+20%)) }

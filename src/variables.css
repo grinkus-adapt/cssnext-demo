@@ -1,0 +1,6 @@
+:root {
+  --fontSize: 1rem;
+  --primaryColor: rebeccapurple;
+  --highlightColor: hwb(190, 35%, 20%);
+  --offwhite: rgba(245, 245, 245, 255);
+}
