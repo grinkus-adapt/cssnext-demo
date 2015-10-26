@@ -20,14 +20,18 @@ function generateCss(inFile, outFile) {
   postcss()
     .use(atImport())
     .use(cssnext)
-    .process(css, { from: inFile, to: outFile })
+    .process(css, { from: inFile, to: outFile, map: { inline: false }})
     .then(function handleResult(result) {
+      var message = 'File %s parsed and %s generated in %sms';
+
       fs.writeFileSync(outFile, result.css);
       if (result.map) {
         fs.writeFileSync(outFile + '.map', result.map);
+        message += ', source map written to %s';
       }
+
       endTime = new Date();
-      log.info('css', 'File %s parsed and %s generated in %sms', inFile, outFile, endTime - startTime);
+      log.info('css', message, inFile, outFile, endTime - startTime, outFile + '.map');
     });
 }
 
