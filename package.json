@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "minimist": "1.2.0",
+    "normalize.css": "3.0.3",
     "npmlog": "1.2.1",
     "postcss": "5.0.10",
     "postcss-cssnext": "2.2.0",
