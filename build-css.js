@@ -11,6 +11,8 @@ var postcss = require('postcss');
 var cssnext = require('postcss-cssnext');
 var atImport = require('postcss-import');
 var watch = require('watch');
+var mainInCss = 'src/style.css';
+var mainOutCss = 'style.css';
 
 function generateCss(inFile, outFile) {
   var startTime = new Date();
@@ -35,7 +37,7 @@ function generateCss(inFile, outFile) {
     });
 }
 
-generateCss('src/style.css', 'style.css');
+generateCss(mainInCss, mainOutCss);
 
 if (argv.w) {
   watch.watchTree(
@@ -45,7 +47,7 @@ if (argv.w) {
     },
     function handleChanges(f) {
       if (typeof f === 'string') {
-        generateCss(f, f.replace('src/', ''));
+        generateCss(mainInCss, mainOutCss);
       }
     }
   );
