@@ -22,7 +22,9 @@ function generateCss(inFile, outFile) {
 
   postcss()
     .use(atImport())
-    .use(cssnext)
+    .use(cssnext({
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    }))
     .use(nested)
     .process(css, { from: inFile, to: outFile, map: { inline: false }})
     .then(function handleResult(result) {
