@@ -432,6 +432,9 @@ body {
   padding: calc(0.5rem + 1px);
   text-align: center;
 }
+body > h1 {
+  color: #666;
+}
 h1,
 h2,
 h3,

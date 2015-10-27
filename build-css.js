@@ -10,6 +10,7 @@ var log = require('npmlog');
 var postcss = require('postcss');
 var cssnext = require('postcss-cssnext');
 var atImport = require('postcss-import');
+var nested = require('postcss-nested');
 var watch = require('watch');
 var mainInCss = 'src/style.css';
 var mainOutCss = 'style.css';
@@ -22,6 +23,7 @@ function generateCss(inFile, outFile) {
   postcss()
     .use(atImport())
     .use(cssnext)
+    .use(nested)
     .process(css, { from: inFile, to: outFile, map: { inline: false }})
     .then(function handleResult(result) {
       var message = 'File %s parsed and %s generated in %sms';
