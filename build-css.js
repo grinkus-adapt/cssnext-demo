@@ -38,7 +38,12 @@ function generateCss(inFile, outFile) {
 
       endTime = new Date();
       log.info('css', message, inFile, outFile, endTime - startTime, outFile + '.map');
-    });
+    })
+    .catch(
+      function handleErrors(err) {
+        console.error(err.stack);
+      }
+    );
 }
 
 generateCss(mainInCss, mainOutCss);
