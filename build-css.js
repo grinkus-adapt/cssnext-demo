@@ -25,7 +25,10 @@ function generateCss(inFile, outFile) {
   postcss()
     .use(atImport())
     .use(stylelint())
-    .use(reporter({ clearMessages: true }))
+    .use(reporter({
+      clearMessages: true,
+      throwError: true
+    }))
     .use(cssnext({
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     }))
