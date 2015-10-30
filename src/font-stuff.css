@@ -1,5 +1,9 @@
 h2 {
   font-variant-caps: small-caps;
+
+  .red {
+    color: red;
+  }
 }
 
 table {

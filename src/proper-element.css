@@ -1,0 +1,9 @@
+.proper-element {
+  background: white;
+
+  &__title {
+    background: var(--primaryColor);
+    color: var(--offwhite);
+    line-height: 3.5rem;
+  }
+}

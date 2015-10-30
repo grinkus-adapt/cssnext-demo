@@ -210,8 +210,7 @@ figure {
  */
 
 hr {
-  -moz-box-sizing: content-box;
-       box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 
@@ -334,8 +333,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box; /* 1 */
+  box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
@@ -357,8 +355,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield; /* 1 */
-  -moz-box-sizing: content-box;
-       box-sizing: content-box; /* 2 */
+  box-sizing: content-box; /* 2 */
 }
 
 /**
@@ -437,10 +434,8 @@ body {
 }
 body > h1 {
   color: #666;
-  -moz-border-radius: 2px;
   border-radius: 2px;
   -webkit-transform: scaleX(0.5);
-  -moz-transform: scaleX(0.5);
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
 }
@@ -467,6 +462,9 @@ h2 {
           font-feature-settings: "c2sc";
   font-variant-caps: small-caps;
 }
+h2 .red {
+  color: red;
+}
 
 table {
   -webkit-font-feature-settings: "lnum";
@@ -483,6 +481,15 @@ table {
   filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.5144 0.6152000000000001 0.1512 0 0 0.2792 0.7488 0.13440000000000002 0 0 0.21760000000000002 0.4272 0.30479999999999996 0 0 0 0 0 1 0" /></filter></svg>#filter');
   -webkit-filter: sepia(.8);
           filter: sepia(.8);
+}
+.proper-element {
+  background: white;
+}
+.proper-element__title {
+  background: rgb(102, 51, 153);
+  color: rgba(245, 245, 245, 255);
+  line-height: 56px;
+  line-height: 3.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

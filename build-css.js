@@ -48,7 +48,7 @@ function generateCss(inFile, outFile) {
     })
     .catch(
       function handleErrors(err) {
-        console.error(err.stack);
+        log.error(err.stack);
       }
     );
 }
