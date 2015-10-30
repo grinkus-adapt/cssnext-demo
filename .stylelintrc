@@ -1,7 +1,23 @@
 {
+  "plugins": {
+    "block-as-partial": "./block-as-partial.js"
+  },
   "rules": {
+    "block-as-partial": [2, "always", {
+      "skip": [
+        "./node_modules/normalize.css/normalize.css",
+        "src/variables.css",
+        "src/base.css",
+        "src/custom-selectors.css",
+        "src/media-queries.css",
+        "src/color-stuff.css",
+        "src/font-stuff.css",
+        "src/filters.css"
+      ]
+    }],
     "color-no-invalid-hex": 2,
-    "declaration-colon-space-after": [1, "always"],
+    "declaration-colon-space-after": [2, "always"],
+    "declaration-colon-space-before": [2, "never"],
     "indentation": [2, 2, {
       "except": ["value"]
     }]
