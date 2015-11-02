@@ -8,12 +8,11 @@ var argv = require('minimist')(process.argv.slice(2), {
 });
 var log = require('npmlog');
 var postcss = require('postcss');
-var stylelint = require('stylelint');
-var reporter = require('postcss-reporter');
 var cssnext = require('postcss-cssnext');
 var atImport = require('postcss-import');
 var nested = require('postcss-nested');
 var watch = require('watch');
+var lint = require('./lint-css.js');
 var mainInCss = 'src/style.css';
 var mainOutCss = 'style.css';
 
@@ -24,11 +23,6 @@ function generateCss(inFile, outFile) {
 
   postcss()
     .use(atImport())
-    .use(stylelint())
-    .use(reporter({
-      clearMessages: true,
-      throwError: true
-    }))
     .use(cssnext({
       browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
     }))
@@ -53,7 +47,13 @@ function generateCss(inFile, outFile) {
     );
 }
 
-generateCss(mainInCss, mainOutCss);
+function lintAndGenerate() {
+  lint(function onSuccessfulLint() {
+    generateCss(mainInCss, mainOutCss);
+  });
+}
+
+lintAndGenerate();
 
 if (argv.w) {
   watch.watchTree(
@@ -63,7 +63,7 @@ if (argv.w) {
     },
     function handleChanges(f) {
       if (typeof f === 'string') {
-        generateCss(mainInCss, mainOutCss);
+        lintAndGenerate();
       }
     }
   );
