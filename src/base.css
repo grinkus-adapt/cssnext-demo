@@ -7,8 +7,8 @@ body {
   text-align: center;
 
   > h1 {
-    color: #666;
     border-radius: 2px;
+    color: #666;
     transform: scaleX(0.5);
   }
 }

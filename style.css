@@ -433,18 +433,19 @@ body {
   text-align: center;
 }
 body > h1 {
-  color: #666;
   border-radius: 2px;
+  color: #666;
   -webkit-transform: scaleX(0.5);
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 { margin-top: 0 }
+h6 { margin-top: 0; }
 
 @media (max-width: 50rem) {
   body { font-size: 1.2rem; }
@@ -454,9 +455,12 @@ a {
   -webkit-transition: color 1s;
           transition: color 1s; /* autoprefixed ! */
 }
-a:hover { color: #FFFFFF; color: rgba(255, 255, 255, 0.5) }
-a:active { color: rgb(102, 51, 153) }
-a:link,a:visited { color: rgb(89, 142, 153) }
+
+a:hover { color: #FFFFFF; color: rgba(255, 255, 255, 0.5); }
+
+a:active { color: rgb(102, 51, 153); }
+
+a:link,a:visited { color: rgb(89, 142, 153); }
 h2 {
   -webkit-font-feature-settings: "c2sc";
           font-feature-settings: "c2sc";
@@ -477,10 +481,11 @@ table {
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }
+
 .sepia {
   filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.5144 0.6152000000000001 0.1512 0 0 0.2792 0.7488 0.13440000000000002 0 0 0.21760000000000002 0.4272 0.30479999999999996 0 0 0 0 0 1 0" /></filter></svg>#filter');
-  -webkit-filter: sepia(.8);
-          filter: sepia(.8);
+  -webkit-filter: sepia(0.8);
+          filter: sepia(0.8);
 }
 .proper-element {
   background: white;
