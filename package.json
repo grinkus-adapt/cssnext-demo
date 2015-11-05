@@ -15,7 +15,7 @@
     "postcss-cssnext": "2.2.0",
     "postcss-import": "7.1.0",
     "postcss-nested": "1.0.0",
-    "stylelint": "2.0.0",
+    "stylelint": "2.1.0",
     "watch": "0.16.0"
   }
 }
